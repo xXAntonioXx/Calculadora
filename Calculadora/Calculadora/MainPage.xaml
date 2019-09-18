@@ -6,8 +6,9 @@
              mc:Ignorable="d"
              x:Class="Calculadora.MainPage">
     <StackLayout>
-        <Label x:Name="inpNumbers" Text="0"/>
-        <Grid>
+        <Label x:Name="inpNumbers" Text="" HeightRequest="40"/>
+        <!--<Button x:Name="btnCalcular" Clicked="Calcular" Text="Calcular" />-->
+        <Grid VerticalOptions="End">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -23,9 +24,34 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            
+            <Button x:Name="btnCalcular" Clicked="Calcular" Text="Calcular" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="Purple" TextColor="White"/>
+            <Button x:Name="btnRetroceso" Clicked="rmvElements" Text="Quitar" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" BackgroundColor="Red" TextColor="White"/>
+            <!--ultimo renglon-->
+            <Button Text="*" Grid.Row="2" Grid.Column="0" Clicked="addElements"/>
+            <Button Text="^" Grid.Row="2" Grid.Column="1" Clicked="addElements"/>
+            <Button Text="!" Grid.Row="2" Grid.Column="2" Clicked="addElements"/>
+            <Button Text="pi" Grid.Row="2" Grid.Column="3" Clicked="addElements"/>
+            <!--ultimo renglon-->
+            <Button Text="7" Grid.Row="3" Grid.Column="0" Clicked="addElements"/>
+            <Button Text="8" Grid.Row="3" Grid.Column="1" Clicked="addElements"/>
+            <Button Text="9" Grid.Row="3" Grid.Column="2" Clicked="addElements"/>
+            <Button Text="/" Grid.Row="3" Grid.Column="3" Clicked="addElements"/>
+            <!--ultimo renglon-->
+            <Button Text="4" Grid.Row="4" Grid.Column="0" Clicked="addElements"/>
+            <Button Text="5" Grid.Row="4" Grid.Column="1" Clicked="addElements"/>
+            <Button Text="6" Grid.Row="4" Grid.Column="2" Clicked="addElements"/>
+            <Button Text="-" Grid.Row="4" Grid.Column="3" Clicked="addElements"/>
+            <!--ultimo renglon-->
+            <Button Text="1" Grid.Row="5" Grid.Column="0" Clicked="addElements"/>
+            <Button Text="2" Grid.Row="5" Grid.Column="1" Clicked="addElements"/>
+            <Button Text="3" Grid.Row="5" Grid.Column="2" Clicked="addElements"/>
+            <Button Text="+" Grid.Row="5" Grid.Column="3" Clicked="addElements"/>
+            <!--ultimo renglon-->
+            <Button Text="0" Grid.Row="6" Grid.Column="0" Clicked="addElements"/>
+            <Button Text="(" Grid.Row="6" Grid.Column="1" Clicked="addElements"/>
+            <Button Text=")" Grid.Row="6" Grid.Column="2" Clicked="addElements"/>
+            <Button Text="." Grid.Row="6" Grid.Column="3" Clicked="addElements"/>
         </Grid>
-        <Button x:Name="btnCalcular" Clicked="Calcular" Text="Calcular" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
     </StackLayout>
 
 </ContentPage>

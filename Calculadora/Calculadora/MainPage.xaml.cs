@@ -14,6 +14,7 @@ namespace Calculadora
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        
         public MainPage()
         {
             InitializeComponent();
@@ -21,9 +22,21 @@ namespace Calculadora
 
         public void Calcular(Object sender,EventArgs e)
         {
-            Expression eh = new Expression("(2*5)/6+2");
+            Expression eh = new Expression(inpNumbers.Text);
             double resultado = eh.calculate();
             DisplayAlert("Resultado", resultado.ToString(), "OK");
+        }
+
+        public void addElements(Object sender,EventArgs e)
+        {
+            string elemento = (sender as Button).Text;
+            inpNumbers.Text += elemento;
+        }
+
+        public void rmvElements(Object sender,EventArgs e)
+        {
+            string aux = inpNumbers.Text;
+            inpNumbers.Text = aux.Remove(inpNumbers.Text.Length - 1);
         }
     }
 
